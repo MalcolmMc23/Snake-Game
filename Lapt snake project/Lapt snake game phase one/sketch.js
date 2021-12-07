@@ -39,6 +39,7 @@ function pGame() {
  background(20)
  snake.run();
  food.run();
+ text('SCORE = ' + score, 100, 50)
 }
 
 function eGame() {
