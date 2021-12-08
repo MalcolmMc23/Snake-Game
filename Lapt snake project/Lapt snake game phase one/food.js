@@ -11,9 +11,9 @@ class Food {
     }
 
     render() {
+        image(imgApple, this.loc.x, this.loc.y, 23, 19)
         fill(255, 0, 0);
-        image(imgApple, this.loc.x, this.loc.y, 92, 76)
-        rect(this.loc.x, this.loc.y, this.size);
+        // rect(this.loc.x, this.loc.y, this.size);
     }
 
     update() {

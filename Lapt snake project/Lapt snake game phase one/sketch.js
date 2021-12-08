@@ -72,6 +72,23 @@ function keyPressed() {
    snake.vel = createVector(1 * cellSize, 0);
  }
 }
+// =========================================== WASD
+if(keyCode == 87) {
+  snake.vel = createVector(0, -1 * cellSize)
+}
+
+if(keyCode == 65) {
+  snake.vel = createVector(-1 * cellSize, 0)
+}
+
+if(keyCode == 83) {
+  snake.vel = createVector(0, 1 * cellSize)
+}
+
+if(keyCode == 68) {
+  snake.vel = createVector(1 * cellSize, 0)
+}
+
 
 }
 
