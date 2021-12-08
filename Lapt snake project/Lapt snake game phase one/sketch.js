@@ -9,6 +9,11 @@ let cellSize
 let score = 0
 let gameState = 1
 let buttPlay, buttInst, buttAgain;
+let imgApple
+
+function preload() {
+  imgApple = loadImage('apple.png')
+}
 
 
 function setup() {
@@ -102,10 +107,10 @@ function iDontKnow() {
   cellSize = 20;
   //++++++++++++++++ start buttons
   if (gameState === 1) {
-    // buttPlay = new Button(msg, x, y, w, h);
-    buttPlay = new Button("Start", 0, 500, 200, 99);
+    // buttPlay = new Button(msg, mX, mY, x, y, w, h);
+    buttPlay = new Button("Start", width/2, height/2 - 40, width/2 - 100, height/2 -100 , 250, 100);
     //&&&&&&&&&&&&&&&&&&&&&&&&&&& add instructions
-    buttAgain = new Button("restart", 500 ,500, 200, 99);
+    buttAgain = new Button("restart", 550, 550, 500 ,500, 200, 99);
 
     //++++++++++++++++end buttons
 

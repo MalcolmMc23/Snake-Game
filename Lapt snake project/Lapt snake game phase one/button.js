@@ -1,9 +1,9 @@
 
 class Button {
-    constructor(msg, x, y, w, h){
+    constructor(msg, mX, mY, x, y, w, h){
         this.msg = msg;
         this.loc = createVector(x,y);
-        this.textLoc = createVector(this.loc.x + 20, this.loc.y + 35);
+        this.textLoc = createVector(mX, mY);
         this.w = w;
         this.h = h;
         this.clrButton = color(0,255,100);
