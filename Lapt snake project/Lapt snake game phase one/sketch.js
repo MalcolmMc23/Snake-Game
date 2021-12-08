@@ -2,17 +2,17 @@
 // 1129
 //snake one phase
 
-let snake
-let food
+let snake, food;
 let cols, rows;
-let cellSize
-let score = 0
-let gameState = 1
+let cellSize;
+let score = 0;
+let gameState = 1;
 let buttPlay, buttInst, buttAgain;
-let imgApple
+let imgApple, imgGrass;
 
 function preload() {
-  imgApple = loadImage('apple.png')
+  imgApple = loadImage('apple.png');
+  imgGrass = loadImage('grass2.jpg');
 }
 
 
@@ -35,16 +35,21 @@ function draw() {
 }
 
 function sGame() {
- background(150)
+ // background(150);
+ image(imgGrass, 0, 0, 800, 600 );
  buttPlay.run()
 
 }
 
 function pGame() {
- background(20)
+ // background(20);
+ image(imgGrass, 0, 0, 800, 600 );
  snake.run();
  food.run();
- text('SCORE = ' + score, 100, 50)
+
+ fill(20);
+ stroke(50)
+ text('SCORE = ' + score, 100, 50);
 }
 
 function eGame() {
@@ -143,5 +148,3 @@ function iDontKnow() {
   food = new Food(x, y);
   //+++++++++++++ gameState 2 stuff end
 }
-
-

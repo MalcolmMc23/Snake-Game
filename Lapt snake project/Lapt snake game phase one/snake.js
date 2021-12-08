@@ -11,14 +11,14 @@ class Snake {
       this.checkWalls();
     }
     render() {
-      fill(0, 0, 255);
+      fill(0, 125, 255);
       rect(this.loc.x, this.loc.y, this.size);
       for (let i = 0; i < this.segment.length; i++) {
         rect(this.segment[i].x, this.segment[i].y, this.size);
-  
+
       }
     }
-  
+
     update() {
       if (this.segment.length > 0) {
         for (let i = this.segment.length - 1; i >= 1; i--) {
@@ -32,12 +32,11 @@ class Snake {
       if (this.checkWalls() || this.checkSnake()) {
         gameState = 3
         this.vel = createVector();
-        // this.loc.x = 0
-        // this.loc.y = 0
+
       }
-  
+
     }
-  
+
     checkWalls() {
       if (this.loc.x < 0 ||
         this.loc.x > width ||
@@ -47,8 +46,8 @@ class Snake {
       }
       return false
     }
-  
-  
+
+
     checkSnake() {
       for (let i = 0; i < this.segment.length; i++) {
         if (this.loc.x === this.segment[i].x &&
@@ -57,8 +56,7 @@ class Snake {
       }
       return false
     }
-  
-  
-  
+
+
+
   }
-  
