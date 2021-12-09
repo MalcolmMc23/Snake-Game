@@ -153,8 +153,10 @@ background(20)
   rows = height / cellSize;
   let x = floor(random(cols)) * cellSize;
   let y = floor(random(rows)) * cellSize;
-  let loc = createVector(x, y);
-  snake = new Snake(loc, createVector(cellSize, 0));
+  let loc = createVector(width/2, height/2);
+  // snake = new Snake(loc, createVector(cellSize, 0));  &&& old
+  snake = new Snake(loc); //&&& new
+
   food = new Food(x, y);
   //+++++++++++++ gameState 2 stuff end
   gameState = 1;

@@ -1,6 +1,6 @@
 class Snake {
-    constructor(loc, vel) {
-      this.loc = createVector();
+    constructor(loc) {
+      this.loc = loc;
       this.vel = createVector();
       this.size = cellSize;
       this.segment = []
@@ -31,7 +31,7 @@ class Snake {
       this.loc.add(this.vel)
       if (this.checkWalls() || this.checkSnake()) {
         gameState = 3
-        this.vel = createVector();
+        // this.vel = createVector();
 
       }
 
