@@ -47,8 +47,9 @@ function pGame() {
   snake.run();
   food.run();
 
+  textSize(30);
   fill(20);
-  stroke(50)
+  stroke(50);
   text('SCORE = ' + score, 100, 50);
 }
 
@@ -65,6 +66,11 @@ function eGame() {
   stroke(50);
   textSize(80)
   text('NICE TRY!', 225, 250)
+
+  textSize(30)
+  fill(20);
+  stroke(50)
+  text('SCORE = ' + score, 100, 50);
   //+++++++++++++++++++++++++++++ end of text
 
 }
@@ -160,4 +166,5 @@ background(20)
   food = new Food(x, y);
   //+++++++++++++ gameState 2 stuff end
   gameState = 1;
+  score = 0
 }
