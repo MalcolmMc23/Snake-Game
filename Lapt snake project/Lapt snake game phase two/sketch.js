@@ -10,6 +10,7 @@ let gameState = 1;
 let buttPlay, buttInst, buttAgain;
 let imgApple, imgGrass, imgFace;
 let eatSound;
+let showInst;
 
 function preload() {
   imgApple = loadImage('apple.png');
@@ -46,7 +47,15 @@ function sGame() {
   // background(150);
   image(imgGrass, 0, 0, 800, 600);
   buttPlay.run()
-
+  buttInst.run();
+  if(showInst) {
+    rect(1 ,76, 200, 100)
+    fill(20)
+    textSize(20)
+    text('eat the food', 5, 95);
+    text('* dont hit anything', 5, 125);
+    text('* move with W A S D', 5, 150);
+  }
 }
 
 function pGame() {
@@ -84,6 +93,19 @@ function eGame() {
 
 
 function keyPressed() {
+  //==================== spacebare restart and start
+  if(gameState === 1) { //start game
+    if(keyCode === 32) {
+      gameState = 2
+    }
+  }
+if (gameState === 3) { // restart game
+  if(keyCode === 32) {
+    initGame()
+  }
+} 
+ //==================== end of spacebare restart and start
+
   if (gameState === 2) {
     if (keyCode == DOWN_ARROW) {
       snake.vel = createVector(0, 1 * cellSize);
@@ -136,8 +158,14 @@ function mouseMoved() {
   } else {
     buttAgain.clrButton = color(255, 100, 0);
   }
-}
 
+  if (buttInst.mouseOverButton()) {
+    buttInst.clrButton = color(100, 255, 200);
+  } else {
+    buttInst.clrButton = color(255, 100, 0);
+  }
+
+}
 
 
 function mousePressed() {
@@ -145,9 +173,12 @@ function mousePressed() {
     gameState = 2;
   }
   if (buttAgain.mouseOverButton()) {
-    // gameState = 1;
     initGame()
   }
+  if(buttInst.mouseOverButton()) {
+    showInst = !showInst
+  }
+  
 }
 
 
@@ -156,7 +187,7 @@ background(20)
   //++++++++++++++++ start buttons
   // buttPlay = new Button(msg, mX, mY, x, y, w, h);
   buttPlay = new Button("Start", width / 2, height / 2 - 40, width / 2 - 100, height / 2 - 100, 250, 100);
-  //&&&&&&&&&&&&&&&&&&&&&&&&&&& add instructions
+  buttInst = new Button("Instructions", 20, 45, 1, 1, 200, 75);
   buttAgain = new Button("restart", 550, 550, 500, 500, 200, 99);
   //++++++++++++++++end buttons
 
