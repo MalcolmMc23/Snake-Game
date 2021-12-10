@@ -8,11 +8,17 @@ let cellSize;
 let score = 0;
 let gameState = 1;
 let buttPlay, buttInst, buttAgain;
-let imgApple, imgGrass;
+let imgApple, imgGrass, imgFace;
+let eatSound;
 
 function preload() {
   imgApple = loadImage('apple.png');
   imgGrass = loadImage('grass2.jpg');
+  // imgFace = loadImage('face.png') $$$$$ snake head image
+
+  soundFormat('mp3', 'ogg');
+  eatSound = loadSound('eat');
+
 }
 
 
@@ -24,7 +30,6 @@ function setup() {
 
 }
 function draw() {
-
   if (gameState === 1) {
     sGame();
   } else if (gameState === 2) {
@@ -46,7 +51,6 @@ function pGame() {
   image(imgGrass, 0, 0, 800, 600);
   snake.run();
   food.run();
-
   textSize(30);
   fill(20);
   stroke(50);

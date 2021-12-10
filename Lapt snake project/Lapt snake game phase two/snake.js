@@ -13,7 +13,8 @@ class Snake {
     render() {
       fill(0, 125, 255);
       rect(this.loc.x, this.loc.y, this.size);
-      for (let i = 0; i < this.segment.length; i++) {
+      // image(imgFace, this.loc.x, this.loc.y) $$$$$snake head image
+      for (let i = 0; i < this.segment.length; i++) { //$$$$$$$ adds segments
         rect(this.segment[i].x, this.segment[i].y, this.size);
 
       }
@@ -29,19 +30,17 @@ class Snake {
         this.segment[0].y = this.loc.y
       }
       this.loc.add(this.vel)
-      if (this.checkWalls() || this.checkSnake()) {
+      if (this.checkWalls() || this.checkSnake()) {//$$$$$$$$ checks collisions 
         gameState = 3
-        // this.vel = createVector();
-
       }
 
     }
 
     checkWalls() {
       if (this.loc.x < 0 ||
-        this.loc.x > width ||
+        this.loc.x > width - 1||
         this.loc.y < 0 ||
-        this.loc.y > height) {
+        this.loc.y > height - 1) {
         return true
       }
       return false
