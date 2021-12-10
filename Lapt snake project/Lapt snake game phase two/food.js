@@ -12,7 +12,7 @@ class Food {
 
     render() {
         image(imgApple, this.loc.x, this.loc.y, 23, 19)
-        // fill(255, 0, 0) 
+        // fill(255, 0, 0)
         // rect(this.loc.x, this.loc.y, this.size);
     }
 
@@ -23,7 +23,7 @@ class Food {
             food = new Food(x, y);
             snake.segment.push(createVector(this.loc.x, this.loc.y))
             score++
-            eatSound.play()
+            // eatSound.play()
 
         }
     }

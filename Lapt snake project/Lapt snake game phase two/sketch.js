@@ -16,8 +16,10 @@ function preload() {
   imgGrass = loadImage('grass2.jpg');
   // imgFace = loadImage('face.png') $$$$$ snake head image
 
-  soundFormat('mp3', 'ogg');
-  eatSound = loadSound('eat');
+  //soundFormat('mp3', 'ogg');
+  // eatSound = loadSound('eat.mp3');
+
+
 
 }
 
@@ -25,6 +27,7 @@ function preload() {
 function setup() {
   var cnv = createCanvas(800, 600);
   cnv.position((windowWidth - width) / 2, 30);
+  // /console.log(eatSound);
   frameRate(9);
   initGame();
 
