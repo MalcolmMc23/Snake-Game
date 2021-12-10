@@ -13,7 +13,7 @@ class Snake {
     render() {
       fill(0, 125, 255);
       rect(this.loc.x, this.loc.y, this.size);
-      // image(imgFace, this.loc.x, this.loc.y) $$$$$snake head image
+      image(imgFace, this.loc.x, this.loc.y) //$$$$$snake head image
       for (let i = 0; i < this.segment.length; i++) { //$$$$$$$ adds segments
         rect(this.segment[i].x, this.segment[i].y, this.size);
 

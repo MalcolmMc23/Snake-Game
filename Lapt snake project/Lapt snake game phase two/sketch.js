@@ -10,12 +10,12 @@ let gameState = 1;
 let buttPlay, buttInst, buttAgain;
 let imgApple, imgGrass, imgFace;
 let eatSound;
-let showInst;
+let showInst, showMen;
 
 function preload() {
   imgApple = loadImage('apple.png');
   imgGrass = loadImage('grass2.jpg');
-  // imgFace = loadImage('face.png') $$$$$ snake head image
+  imgFace = loadImage('face.png') //$$$$$ snake head image
 
   //soundFormat('mp3', 'ogg');
   // eatSound = loadSound('eat.mp3');
@@ -52,9 +52,12 @@ function sGame() {
     rect(1 ,76, 200, 100)
     fill(20)
     textSize(20)
-    text('eat the food', 5, 95);
+    text('* eat the food', 5, 95);
     text('* dont hit anything', 5, 125);
     text('* move with W A S D', 5, 150);
+  }
+  if(showMen) {
+    men();
   }
 }
 
@@ -67,6 +70,9 @@ function pGame() {
   fill(20);
   stroke(50);
   text('SCORE = ' + score, 100, 50);
+  if(showMen) {
+   men();
+  }
 }
 
 function eGame() {
@@ -91,8 +97,16 @@ function eGame() {
 
 }
 
+function men() {
+  fill(0, 125, 255);
+  rect(400, 100, 200,200)
+
+  //$$$$$$$$$$$$$$$$$$$$$$$$ add settings 
+
+}
 
 function keyPressed() {
+  // console.log(keyCode);
   //==================== spacebare restart and start
   if(gameState === 1) { //start game
     if(keyCode === 32) {
@@ -106,11 +120,15 @@ if (gameState === 3) { // restart game
 } 
  //==================== end of spacebare restart and start
 
+ if(keyCode === 27) {
+    showMen = !showMen
+    snake.vel = createVector( 0, 0);
+ }
+
   if (gameState === 2) {
-    if (keyCode == DOWN_ARROW) {
+    if (keyCode == DOWN_ARROW) { 
       snake.vel = createVector(0, 1 * cellSize);
     }
-
 
     if (keyCode == UP_ARROW) {
       snake.vel = createVector(0, -1 * cellSize);
