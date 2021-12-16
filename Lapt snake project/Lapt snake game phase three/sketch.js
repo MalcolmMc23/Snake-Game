@@ -219,7 +219,8 @@ function mouseMoved() {
 
 
 function mousePressed() {
-  if (buttPlay.mouseOverButton()) {
+ if (buttPlay.mouseOverButton() && showMenu) {
+ }else if (buttPlay.mouseOverButton()) {
     gameState = 2;
   }
   if (buttAgain.mouseOverButton()) {
