@@ -33,7 +33,6 @@ function setup() {
   var cnv = createCanvas(800, 600);
   cnv.position((windowWidth - width) / 2, 30);
   // /console.log(eatSound);
-  frameRate(9);
   initGame();
 
 }
@@ -55,6 +54,7 @@ function sGame() {
   if(showMenu) {
     menu();
   } else {
+    frameRate(60);
   image(imgGrass, 0, 0, 800, 600);
   image(imgSnake, 100, 100, 200, 200)
   buttPlay.run()
@@ -74,6 +74,7 @@ function sGame() {
 
 function pGame() {
   // background(20);
+  frameRate(9);
   image(imgGrass, 0, 0, 800, 600);
   snake.run();
   food.run();
